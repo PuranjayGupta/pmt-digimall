@@ -1,0 +1,17 @@
+.content-layout {
+  /* background: #fff; */
+  /* background: rgba(255, 255, 255, 0.2); */
+  background: inherit;
+  padding: 50px 50px;
+  margin-top: 64px;
+  /* padding: 0 24px 24px; */
+  /* height: calc(100vh - 64px); */
+  overflow: "auto";
+}
+
+.div-layout {
+  background: #fff;
+  padding: 24px;
+  min-height: calc(100vh - 164px);
+  /* height: calc(100vh - 64px); */
+}
