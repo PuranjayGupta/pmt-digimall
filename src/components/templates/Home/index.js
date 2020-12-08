@@ -32,7 +32,6 @@ const Home = (props) => {
         });
 
         localStorage.setItem("globalData", JSON.stringify(localData));
-        //console.log(globalData);
         props.changeCount(
           "set",
           Object.values(localData.cartData).reduce((a, b) => a + b, 0)
@@ -45,7 +44,6 @@ const Home = (props) => {
   }, [dispatch]);
 
   const renderAction = (productKey) => {
-    console.log(cartData);
     if (cartData[productKey] >= 0) {
       return (
         <InputNumber
@@ -57,12 +55,7 @@ const Home = (props) => {
       );
     } else {
       return (
-        <Button
-          // disabled={cartData[productKey]}
-          onClick={() => onChange(1, productKey)}
-        >
-          Add to Cart
-        </Button>
+        <Button onClick={() => onChange(1, productKey)}>Add to Cart</Button>
       );
     }
   };
@@ -86,8 +79,6 @@ const Home = (props) => {
   };
 
   React.useEffect(() => {
-    // props.changeCount("set", calSum());
-    // console.log(globalData);
     props.changeCount(
       "set",
       Object.values(cartData).reduce((a, b) => a + b, 0)
@@ -116,26 +107,7 @@ const Home = (props) => {
             <List.Item
               actions={[
                 <Row align="left">
-                  <Col>
-                    {
-                      renderAction(productID)
-                      // cartData[productID] ? (
-                      //   <InputNumber
-                      //     min={0}
-                      //     max={10}
-                      //     defaultValue={cartData[productID]}
-                      //     onChange={(value) => onChange(value, productID)}
-                      //   />
-                      // ) : (
-                      //   <Button
-                      //     //disabled={cartData[productID]}
-                      //     onClick={() => onChange(1, productID)}
-                      //   >
-                      //     Add to Cart
-                      //   </Button>
-                      // )
-                    }
-                  </Col>
+                  <Col>{renderAction(productID)}</Col>
                 </Row>,
               ]}
             >

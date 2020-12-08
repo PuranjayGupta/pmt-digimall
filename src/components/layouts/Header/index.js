@@ -1,15 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Layout, Menu, Row, Col, Badge } from "antd";
+import { Layout, Row, Col, Badge } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import DigiMallContext from "../../App";
 
 const { Header } = Layout;
 
 const MainHeader = (props) => {
   return (
     <Layout>
-      <Header style={{ position: "fixed", width: "100%" }}>
+      <Header style={{ position: "fixed", width: "100%", zIndex: 1 }}>
         <Row>
           <Col>
             <NavLink to="/" style={{ fontSize: "25px", color: "white" }}>

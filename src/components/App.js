@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router } from "react-router-dom";
 import history from "./history";
 import MainLayout from "./layouts";
 import "antd/dist/antd.css";
@@ -23,11 +23,6 @@ export const App = () => {
     <DigiMallContext.Provider value={{ globalData: globalDataState, dispatch }}>
       <>
         <Router history={history}>
-          {/* <Router history={history}>
-          <Switch>
-            <Route path="/" component={MainLayout} />
-          </Switch>
-        </Router> */}
           <MainLayout />
         </Router>
       </>

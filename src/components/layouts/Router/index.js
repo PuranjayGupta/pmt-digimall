@@ -1,11 +1,9 @@
 import React from "react";
 import { Layout } from "antd";
-import { Switch, Route, Router } from "react-router-dom";
-import MainLayout from "../index";
+import { Switch, Route } from "react-router-dom";
 import Home from "../../templates/Home";
 import ProductDetails from "../../templates/ProductDetails";
 import Cart from "../../templates/Cart";
-import history from "../../history";
 import "./index.css";
 
 const { Content } = Layout;

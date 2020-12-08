@@ -38,7 +38,6 @@ const ProductDetails = (props) => {
       setIsModalVisible(false);
       return;
     }
-    console.log(originalValue);
     let obj = {};
     obj[props.location.state.product] = productQuantity;
 

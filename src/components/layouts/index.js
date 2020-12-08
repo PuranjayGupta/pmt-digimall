@@ -3,7 +3,6 @@ import MainHeader from "./Header";
 import { Layout } from "antd";
 import Router from "./Router";
 import "./index.css";
-import DigiMallContext from "../App";
 
 const MainLayout = () => {
   const [count, setCount] = React.useState(0);
