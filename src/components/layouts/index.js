@@ -7,7 +7,6 @@ import DigiMallContext from "../App";
 
 const MainLayout = () => {
   const [count, setCount] = React.useState(0);
-  console.log(count);
 
   const changeCount = (type, number) => {
     if (type === "add") {

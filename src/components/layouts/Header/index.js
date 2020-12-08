@@ -7,9 +7,6 @@ import DigiMallContext from "../../App";
 const { Header } = Layout;
 
 const MainHeader = (props) => {
-  console.log("hhhhh");
-  console.log(props);
-
   return (
     <Layout>
       <Header style={{ position: "fixed", width: "100%" }}>
