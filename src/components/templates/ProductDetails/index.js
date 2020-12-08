@@ -28,9 +28,6 @@ const ProductDetails = (props) => {
   };
 
   const handleOk = () => {
-    console.log("ggggg");
-    console.log(productQuantity);
-    console.log(originalValue);
     if (productQuantity > originalValue) {
       props.changeCount("add", productQuantity - originalValue);
       originalValue = productQuantity;

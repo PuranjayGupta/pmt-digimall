@@ -32,7 +32,6 @@ const Cart = (props) => {
       productPriceObj[productKey] =
         item.price * localStorageState.cartData[productKey];
     });
-    //setProductPrice(productPriceObj);
     return productPriceObj;
   };
 
@@ -43,33 +42,14 @@ const Cart = (props) => {
     for (const [key, value] of Object.entries(productPrice)) {
       sum = sum + value / localStorageState.apiData[key].price;
     }
-    console.log("sum");
-    console.log(sum);
     return sum;
   };
 
   React.useEffect(() => {
     props.changeCount("set", calSum());
-    // listData.map((item) => {
-    //   productKey = Object.keys(localStorageState.apiData).find(
-    //     (key) => localStorageState.apiData[key] === item
-    //   );
-
-    //   productPriceObj[productKey] =
-    //     item.price * localStorageState.cartData[productKey];
-    // });
-    // setProductPrice(productPriceObj);
   }, [globalData]);
 
   const onChange = (value, productKey) => {
-    // if (value > oldValue) {
-    //   props.changeCount("add", value - oldValue);
-    // } else if (value < oldValue) {
-    //   props.changeCount("sub", oldValue - value);
-    // }
-    console.log("value");
-    console.log(value);
-
     let obj = {};
     obj[productKey] = value;
     dispatch({
@@ -79,7 +59,6 @@ const Cart = (props) => {
 
     localStorage.setItem("globalData", JSON.stringify(globalData));
 
-    // Object.assign(productPriceObj, productPrice);
     productPriceObj = JSON.parse(JSON.stringify(productPrice));
 
     if (value === 0) {
@@ -91,14 +70,12 @@ const Cart = (props) => {
       setListData(arr);
       delete productPriceObj[productKey];
       setProductPrice(productPriceObj);
-      // props.changeCount("set", calSum());
       return;
     }
 
     productPriceObj[productKey] =
       localStorageState.apiData[productKey].price * value;
     setProductPrice(productPriceObj);
-    // props.changeCount("set", calSum());
   };
 
   React.useEffect(() => {
@@ -139,7 +116,6 @@ const Cart = (props) => {
                   <Row align="left">
                     <Col>
                       <Button
-                        //style={{ width: "100%" }}
                         icon={<DeleteTwoTone />}
                         onClick={() => onChange(0, productID)}
                       />
@@ -148,7 +124,6 @@ const Cart = (props) => {
                   <Row align="left">
                     <Col>
                       <InputNumber
-                        //style={{ width: "100%" }}
                         min={1}
                         max={10}
                         defaultValue={localStorageState.cartData[productID]}
